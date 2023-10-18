@@ -40,6 +40,7 @@ switch (x)
 
 }
 */
+/*
 //driver
 using Basic_Programs;
 Calculation calculation = new Calculation();
@@ -47,5 +48,19 @@ int num1 = Convert.ToInt32(Console.ReadLine());
 int num2 = Convert.ToInt32(Console.ReadLine());
  double res=calculation.Add(num1,num2);
 Console.WriteLine(res);
+*/
+//using driver class
+using Basic_Programs;
+int consumernumber = Convert.ToInt32(Console.ReadLine());
+
+Electricity electricity1 = new(consumernumber, 9000, 9300, "XX");
+Console.WriteLine(electricity1.CalculateBill());
+Console.WriteLine(electricity1.consumernumber);
+Console.WriteLine(electricity1.consumername);
+Electricity electricity2 = new(23456, 9000, 10000, "XX");
+Console.WriteLine(electricity2 .CalculateBill());
+Console.WriteLine(electricity2.CalculateBill());
+Console.WriteLine(electricity2.consumernumber);
+
 
 
