@@ -49,6 +49,7 @@ int num2 = Convert.ToInt32(Console.ReadLine());
  double res=calculation.Add(num1,num2);
 Console.WriteLine(res);
 */
+/*
 //using driver class
 using Basic_Programs;
 int consumernumber = Convert.ToInt32(Console.ReadLine());
@@ -61,6 +62,24 @@ Electricity electricity2 = new(23456, 9000, 10000, "XX");
 Console.WriteLine(electricity2 .CalculateBill());
 Console.WriteLine(electricity2.CalculateBill());
 Console.WriteLine(electricity2.consumernumber);
+*/
+/*
+//driver
+using Basic_Programs;
+Employee employee = new(111, "AA", "IT", 10000);
+Console.WriteLine("Emp Id: {0} \n Name : {1} \n" + "Dept : {2} \n Basic Pay: {3} ",
+employee.Eid,
+employee.Ename,
+employee.Dept, employee.Basicpay,
+employee.CalculateSalary);
+Console.WriteLine("Net Pay: {0}", employee.CalculateSalary);
+*/
+//driver 
+using Basic_Programs;
+
+ArraysEx arraysEx = new();
+arraysEx.Ja();
+
 
 
 
