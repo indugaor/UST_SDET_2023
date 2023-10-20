@@ -74,12 +74,71 @@ employee.Dept, employee.Basicpay,
 employee.CalculateSalary);
 Console.WriteLine("Net Pay: {0}", employee.CalculateSalary);
 */
+/*
 //driver 
 using Basic_Programs;
 
 ArraysEx arraysEx = new();
 arraysEx.Ja();
+*/
+//driver 
+using Basic_Programs;
+/*
+StudentMarks marks= new ();
+marks.RollNo = 1000;
+marks.StudName = "Indu";
+marks.Mark1 = 99;
+marks.Mark2 = 87;
+marks.Mark3 = 97;
 
+marks.DisplayStudentDetails();
+Console.WriteLine("Total"+marks.CalculateTotal());
+Console.WriteLine("Average"+marks.CalculateAverage());
+*/
+/*
+StudentGrade grade = new();
+grade.RollNo = 1000;
+grade.StudName = "Indu";
+grade.Mark1 = 99;
+grade.Mark2 = 87;
+grade.Mark3 = 97;
+
+grade.DisplayStudentDetails();
+Console.WriteLine("Total" + grade.CalculateTotal());
+Console.WriteLine("Average" + grade.CalculateAverage());
+Console.WriteLine("Grade" + grade.CalculateGrade());
+*/
+Console.WriteLine("1. TS 2. NTS");
+switch (Convert.ToInt32(Console.ReadLine()))
+{
+    case 1:
+
+
+        TeachingStaff ts = new TeachingStaff();
+        ts.Staffid = 111;
+        ts.Name = "TS1";
+        ts.Dept = "CS";
+        ts.Specializations = "Os,DBMS,DS";
+        ts.Sem = 4;
+        ts.DisplayTStaffDetails();
+        ts.DisplayStaffDetails();
+        break;
+
+case 2:
+        
+
+NonTeachingStaff nts = new NonTeachingStaff();
+    
+    nts.Staffid =999;
+    nts.Name = "NTS1";
+    nts.Dept = "Admin";
+    nts.Responsibilities = "Att,Sal";
+    nts.Experence = 4;
+        nts.DisplayStaffDetails();
+    
+    nts.DisplayNTStaffDetails();
+    break;
+}
 
 
 
