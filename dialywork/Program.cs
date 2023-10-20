@@ -108,6 +108,7 @@ Console.WriteLine("Total" + grade.CalculateTotal());
 Console.WriteLine("Average" + grade.CalculateAverage());
 Console.WriteLine("Grade" + grade.CalculateGrade());
 */
+/*
 Console.WriteLine("1. TS 2. NTS");
 switch (Convert.ToInt32(Console.ReadLine()))
 {
@@ -139,6 +140,19 @@ NonTeachingStaff nts = new NonTeachingStaff();
     nts.DisplayNTStaffDetails();
     break;
 }
+*/
+EV ev = new();
+ev.Vehnum = 444;
+ev.Brand = "XX";
+ev.Model = "AA";
+ev.Disp();
+Console.WriteLine(ev.setTypeForVeh());
 
+PV pv = new();
+pv.Vehnum = 234567;
+pv.Brand = "YY";
+pv.Model = "BB";
+pv.Disp();
+Console.WriteLine(pv.setTypeForVeh());
 
 
