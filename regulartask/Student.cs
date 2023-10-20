@@ -1,37 +1,49 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace regular
 {
-    class Student
+    public class Student
     {
-        public string studentName;
-        public int[] studentGrades;
-        public Student(string studentName, int[] studentGrades)
-        {
-            this.studentName = studentName;
-            this.studentGrades = studentGrades;
+        public double mark1, mark2, mark3;
+        public double average;
 
+        public Student(double mark1, double mark2, double mark3)
+        {
+            this.mark1 = mark1;
+            this.mark2 = mark2;
+            this.mark3 = mark3;
 
         }
+
         public double CalculateAverage()
         {
-            if (studentGrades.Length == 0)
+            average = ((mark1 + mark2 + mark3) / 3);
+
+            if (average == 0)
             {
-                return 0;
+                Console.WriteLine("Fail");
+            }
+            else if (average >= 90)
+            {
+                Console.WriteLine("A");
             }
 
-            int sum = 0;
-            foreach (int grade in studentGrades)
+            else if (average >= 80 && average < 90)
             {
-                sum += grade;
-
+                Console.WriteLine("B");
             }
-            return sum / studentGrades.Length;
+            else if (average >= 70 && average < 80)
+            {
+                Console.WriteLine("C");
+            }
+
+
+            return average;
         }
     }
 }
