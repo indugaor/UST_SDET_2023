@@ -18,6 +18,7 @@ foreach (var item in p1)
     Console.WriteLine("total price" + item.ProductValue());
 } 
 */
+/*
 
 using regular;
 using regular;
@@ -47,4 +48,32 @@ foreach (Students item in students)
     Console.WriteLine($"Total Marks is:{total}");
     Console.WriteLine($"Average Marks is: {item.CalculateAverage()}");
     Console.WriteLine(item.GetMarksSummary());
+}
+*/
+Console.WriteLine("Choose");
+Console.WriteLine("1 -> DigitalProduct\n 2->ElectronicsProduct\n " +
+    "3-> ClothingProduct");
+switch (Convert.ToInt32(Console.ReadLine()))
+{
+    case 1:
+        DigitalProduct digitalProduct = new(5, "camera", 10000, 6, "MP4");
+        digitalProduct.DisplayProduct();
+        digitalProduct.ElectronicsProductDisplay();
+        digitalProduct.DisplayDigitalProduct();
+        break;
+    case 2:
+        ElectronicsProduct electronicsProduct = new(5, "fan", 870, 8);
+        electronicsProduct.DisplayProduct();
+        electronicsProduct.ElectronicsProductDisplay();
+        break;
+    case 3:
+        ClothingProduct clothingProduct = new("Dress", 500, 4, "XL");
+        clothingProduct.DisplayProduct();
+        clothingProduct.DisplayClothing();
+        break;
+    default:
+        Console.WriteLine("Please check the number you have entered");
+        break;
+
+
 }

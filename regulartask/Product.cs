@@ -9,30 +9,49 @@ namespace regular
 {
     internal class Product
     {
-        private string productName;
-        private double price;
-        private double quantity;
-
-        public Product(string productName, double price, double quantity)
+        public Product(string? productName, double price, int quantity)
         {
-            this.productName = productName;
-            this.price = price;
-            this.quantity = quantity;
+            ProductName = productName;
+            Price = price;
+            Quantity = quantity;
         }
-        public string? ProductName { get => productName; set => productName = value; }
-        public double Price { get => price; set => price = value; }
-        public double Quantity { get => quantity; set => quantity = value; }
 
-        public double SetPrice(double newPrice)
+        /*
+private string? productName;
+private double price;
+private int quantity;
+
+
+
+public Product(string? productName, double price, int quantity)
+{
+   this.productName = productName;
+   this.price = price;
+   this.quantity = quantity;
+}
+*/
+
+        public string? ProductName { get; set; }
+        public double Price { get; set; }
+        public int Quantity { get; set; }
+
+        public void SetPrice(double newPrice)
         {
 
-            this.Price = newPrice;
-            return newPrice;
+            Price = newPrice;
+
         }
+
         public double ProductValue()
         {
-            double totalvalue = price * quantity;
-            return totalvalue;
+
+            return Price * Quantity;
+        }
+
+        public void DisplayProduct()
+        {
+            Console.WriteLine("Product Name :" + ProductName + " Price : "
+                + Price + " Quantity :" + Quantity);
         }
 
 
