@@ -141,6 +141,7 @@ NonTeachingStaff nts = new NonTeachingStaff();
     break;
 }
 */
+/*
 EV ev = new();
 ev.Vehnum = 444;
 ev.Brand = "XX";
@@ -154,5 +155,35 @@ pv.Brand = "YY";
 pv.Model = "BB";
 pv.Disp();
 Console.WriteLine(pv.setTypeForVeh());
+*/
+/*
+Doctor doc = new Doctor();
+doc.AddNewDoctor(1234,"AA");
+doc.DisplayDoctorDetails();
+doc.ModifyDoctor(9876,"BB");
+doc.DisplayDoctorDetails();
+doc.BookApp(9876, "XX");
+doc.DelApp("XX");
+*/
+BankDetails bank = new BankDetails(1234, 1234567890L, "AA", "Inactive");
+Console.WriteLine("1.Custid 2.Accno 3.Name");
+int ch = Convert.ToInt32(Console.ReadLine());
+bank.WelcomeMessage();
+switch (ch)
+{
+    case 1:
+        Console.WriteLine("Custid : ");
+        bank.GetAccDetails(Convert.ToInt32(Console.ReadLine()));
+        break;
+    case 2:
+        Console.WriteLine("Accno : ");
+        bank.GetAccDetails(Convert.ToInt64(Console.ReadLine()));
+        break;
 
-
+    case 3:
+        Console.WriteLine("Name : ");
+        bank.GetAccDetails(Convert.ToInt32(Console.ReadLine()));
+        break;
+    default: Console.WriteLine("Enter bet 1-3");
+        break;
+}
