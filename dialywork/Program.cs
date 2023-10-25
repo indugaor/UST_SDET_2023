@@ -165,6 +165,7 @@ doc.DisplayDoctorDetails();
 doc.BookApp(9876, "XX");
 doc.DelApp("XX");
 */
+/*
 BankDetails bank = new BankDetails(1234, 1234567890L, "AA", "Inactive");
 Console.WriteLine("1.Custid 2.Accno 3.Name");
 int ch = Convert.ToInt32(Console.ReadLine());
@@ -187,3 +188,15 @@ switch (ch)
     default: Console.WriteLine("Enter bet 1-3");
         break;
 }
+*/
+/*
+NGC nGC = new NGC();
+nGC.ArrayListHandling();
+nGC.SLHandling();
+nGC.QueueHandling();
+nGC.SLHandling();
+nGC.HThandling();
+*/
+Basic_Programs.GC gc = new Basic_Programs.GC();
+gc.ListHandling();
+gc.Dicthandling();
