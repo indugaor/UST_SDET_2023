@@ -81,6 +81,7 @@ switch (Convert.ToInt32(Console.ReadLine()))
 */
 //Employee employee = new("ab", "cd", 23, 22);
 //employee.DisplayInfo();
+/*
 Circle circle = new Circle();
 circle.Radius = 5;
 circle.Draw();
@@ -93,3 +94,22 @@ rectangle.Breadth = 20;
 rectangle.Draw();
 Console.WriteLine("Area: " + rectangle.CalculateArea());
 Console.WriteLine("Perimeter: " + rectangle.CalculatePerimeter());
+*/
+/*
+InsurancePolicy policy = new InsurancePolicy("Auto Insurance", 12345, 700.00);
+Console.WriteLine("Initial Policy Details:");
+policy.DisplayPolicyDetails();
+Console.WriteLine();
+policy.RenewPolicy(700.00);
+Console.WriteLine();
+policy.RenewPolicy();
+Console.WriteLine();
+Console.WriteLine("Final Policy Details:");
+policy.DisplayPolicyDetails();
+*/
+InsurancePolicies lifeInsurance = new LifeInsurance("Life Policy", 1, 25);
+InsurancePolicies carInsurance = new CarInsurance("Car Policy", 2, "SUV");
+Console.WriteLine("Life Insurance Policy Details:");
+lifeInsurance.DisplayPolicyDetails();
+Console.WriteLine("\n Car Insurance policy Details:");
+carInsurance.DisplayPolicyDetails();
