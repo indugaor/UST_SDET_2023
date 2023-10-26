@@ -83,6 +83,7 @@ arraysEx.Ja();
 */
 //driver 
 using Basic_Programs;
+using Basic_Programs.ExceptionMess;
 /*
 StudentMarks marks= new ();
 marks.RollNo = 1000;
@@ -197,6 +198,59 @@ nGC.QueueHandling();
 nGC.SLHandling();
 nGC.HThandling();
 */
+/*
 Basic_Programs.GC gc = new Basic_Programs.GC();
 gc.ListHandling();
 gc.Dicthandling();
+*/
+ExcepHandling excep=new ExcepHandling(10,107);
+
+try
+{
+    excep.NumCheck();
+}
+catch(Num1Exception ex)
+{
+    Console.WriteLine(ex.Message);
+}
+try
+{
+    excep.NumCheck2();
+
+
+}
+catch(Num2Exception ex)
+{
+    Console.WriteLine(ex.Message);
+}
+
+/*
+try
+{
+    excep.Divide();
+
+
+  
+
+}
+catch (ArithmeticException ex)
+{
+    //  Console.WriteLine(ex.Message);
+    //Console.WriteLine(ex.StackTrace);
+    //Console.WriteLine(ex.Source);
+    Console.WriteLine(MyExceptions.exmesslist["Div 0"]);
+}
+catch (IndexOutOfRangeException ex)
+{
+    Console.WriteLine(MyExceptions.exmesslist["IOR"]);
+}
+catch (Exception ex)
+{
+    Console.WriteLine(MyExceptions.exmesslist["UE"]);
+}
+finally
+{
+    Console.WriteLine("Done");
+}
+
+ */       

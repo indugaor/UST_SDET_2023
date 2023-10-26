@@ -107,9 +107,101 @@ Console.WriteLine();
 Console.WriteLine("Final Policy Details:");
 policy.DisplayPolicyDetails();
 */
+/*
 InsurancePolicies lifeInsurance = new LifeInsurance("Life Policy", 1, 25);
 InsurancePolicies carInsurance = new CarInsurance("Car Policy", 2, "SUV");
 Console.WriteLine("Life Insurance Policy Details:");
 lifeInsurance.DisplayPolicyDetails();
 Console.WriteLine("\n Car Insurance policy Details:");
 carInsurance.DisplayPolicyDetails();
+*/
+/*
+Customer customer = new Customer();
+List<Customer> customerArray = new List<Customer>
+{
+new(1, "Indu", "4848", 1000),
+new(2, "Keerthi", "8484", 2000),
+new(3, "Raju", "5353", 3000)
+};
+
+foreach (Customer cust in customerArray)
+{
+    Console.WriteLine("Customer Name: " + cust.Name +
+    " Customer ID : " + cust.CustomerId + " Phone Number: " +
+    cust.PhoneNumber + " Balance : " + cust.Balance);
+}
+bool IsCustAvail = false;
+
+foreach (Customer cust in customerArray)
+{
+    if (customer.SearchCustomer("8484", cust))
+    {
+        IsCustAvail = true;
+        Console.WriteLine("Customer Name: " + cust.Name + " Balance: " +
+        cust.Balance);
+        break;
+    }
+}
+
+if (!IsCustAvail)
+{
+    Console.WriteLine("Customer not found");
+}
+*/
+/*
+List<CallRecord> callRecords = new List<CallRecord>()
+{
+    new(12,"123456","4 min"),
+    new(34,"123456","6 min"),
+    new(56,"1234","8 min")
+
+};
+
+foreach(CallRecord call in callRecords)
+{
+    Console.WriteLine("Call Id: "+call.CallID+" Phone Number: "+call.PhoneNumber+
+        " CallTime: "+call.CallTime);
+    
+}
+foreach(CallRecord calls in callRecords)
+{
+    calls.CallHistory(calls);
+       
+}
+
+Dictionary<string, int> callCount = new Dictionary<string, int>();
+foreach(CallRecord calls in callRecords)
+{
+    if (callCount.ContainsKey(calls.PhoneNumber))
+    {
+        callCount[calls.PhoneNumber]++;
+    }
+    else
+    {
+        callCount[calls.PhoneNumber] = 1;
+    }
+}
+foreach(var i in callCount)
+{
+    Console.WriteLine(" Phone Number: "+i.Key+ " - Total Calls: "+ i.Value);
+}
+*/
+
+try
+{
+    Patient patient1 = new(11, "aa", 25, "diabetics");
+    patient1.AddPatient(patient1);
+}
+catch(AggregateException ex)
+{
+    Console.WriteLine(ex.Message);
+}
+try
+{
+    Patient patient2 = new(11, "aa", 125, "diabetics");
+    patient2.AddPatient(patient2);
+}
+catch (AggregateException ex)
+{
+    Console.WriteLine(ex.Message);
+}
