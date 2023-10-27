@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace regular
+namespace Basic_Programs
 {
-    internal interface IDisplayable
+    internal class PV : Vehicle
     {
-        public void DisplayInfo()
+        public override string? setTypeForVeh()
         {
-
+            return "BMW";
         }
     }
 }
