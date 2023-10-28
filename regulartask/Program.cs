@@ -203,6 +203,8 @@ Basic_Programs.GC gc = new Basic_Programs.GC();
 gc.ListHandling();
 gc.Dicthandling();
 */
+/*
+
 ExcepHandling excep=new ExcepHandling(10,107);
 
 try
@@ -253,4 +255,12 @@ finally
     Console.WriteLine("Done");
 }
 
- */       
+ */
+
+FileOperations fo=new FileOperations();
+//fo.CreateFile();
+//fo.WriteData();
+//fo.ReadData();
+//fo.CopyMoveFile();
+//fo.DeleteFile();
+fo.FileProperties();

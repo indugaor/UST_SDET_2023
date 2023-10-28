@@ -23,7 +23,7 @@ namespace regular
             PhoneNumber = phoneNumber;
             Balance = balance;
         }
-        public Customer() { }
+       public Customer() { }
 
 
 

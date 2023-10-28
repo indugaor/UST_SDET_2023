@@ -1,0 +1,4 @@
+Patient ID: 102
+Record ID : 11
+Description:  Paracetamol for 2 days
+Date: 28-10-2023 09:22:25

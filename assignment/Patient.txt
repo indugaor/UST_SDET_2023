@@ -1,0 +1,1 @@
+Patient Id : 12 Patient Name :aa Age: 24 Diagnosis: diabetics
