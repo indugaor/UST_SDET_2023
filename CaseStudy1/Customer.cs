@@ -8,10 +8,10 @@ namespace CaseStudy
 {
     internal class Customer
     {
-
         private string? CustomerName;
         private int CustomerId;
         private string? PhoneNumber;
+
 
         public string? CustomerName1
         {
@@ -39,7 +39,5 @@ namespace CaseStudy
             Console.WriteLine("Customer ID: " + CustomerId1 + "Customer Name: "
                 + CustomerName1 + " Contact Number : " + PhoneNumber1);
         }
-
-
-        }
     }
+}
