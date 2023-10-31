@@ -83,7 +83,8 @@ arraysEx.Ja();
 */
 //driver 
 using Basic_Programs;
-using Basic_Programs.ExceptionMess;
+using System.Security.Cryptography.X509Certificates;
+//using Basic_Programs.ExceptionMess;
 /*
 StudentMarks marks= new ();
 marks.RollNo = 1000;
@@ -256,11 +257,79 @@ finally
 }
 
  */
-
-FileOperations fo=new FileOperations();
+//FileOperations fo=new FileOperations();
 //fo.CreateFile();
 //fo.WriteData();
 //fo.ReadData();
 //fo.CopyMoveFile();
 //fo.DeleteFile();
-fo.FileProperties();
+//fo.FileProperties();
+/*
+GenEx<int> g1 = new GenEx<int>(10,20);
+Console.WriteLine(g1.Val1 + " " + g1.Val2);
+GenEx<double> g2 = new GenEx<double>(10.9887, 20.23456);
+Console.WriteLine(g2.Val1 + " " + g2.Val2);
+GenEx<string> g3 = new GenEx<string>("Hi", "Hello !");
+Console.WriteLine(g3.Val1 + " " + g3.Val2);
+GenEx<bool> g4= new GenEx<bool>(true, false);
+Console.WriteLine(g4.Val1+ " "+g4.Val2);
+*/
+/*
+
+GenEx<int> ga =new (new int[3] {10,20,30});
+//Console.WriteLine(ga.Arr);
+
+ga.Disp();
+*/
+/*
+static void Swap<T>(ref T num1, ref T num2)
+{
+    T temp;
+    temp = num1;
+    num1 = num2;
+    num2 = temp;
+
+}
+
+
+int n1 = 10, n2 = 20;
+char c1 = 'A', c2 = 'B';
+Swap<int>(ref n1, ref n2);
+Swap<char>(ref c1, ref c2);
+Console.WriteLine("a={0},b={1}",n1,n2);
+Console.WriteLine("c={0},d={1}",c1,c2);
+*/
+
+
+
+
+
+
+public delegate void Del1(string mess);
+public delegate void Del2(int n1,int n2);
+public delegate int Del3(int n1,int n2);
+class program
+{
+    // public static Del1 MethodA { get; private set; }
+
+    //  public static void delcall()
+    //{
+    //  Del1 dobj1 = DelEx.MethodA;
+    //}
+    //private static DelEx MethodA;
+    public static void Main(string[] args)
+    {
+        // delcall();
+        
+        
+        Del1 dobj1 = DelEx.MethodA;
+        dobj1("Hello How R U ?");
+        DelEx delEx = new();
+        Del2 dobj2 = delEx.Add;
+        dobj2(10, 20);
+        Del2 dobj3 = delEx.Sub;
+        dobj2(10,20);
+        Del3 dobjr = delEx.AddR;
+        Console.WriteLine(dobjr(10,20));
+    }
+}
