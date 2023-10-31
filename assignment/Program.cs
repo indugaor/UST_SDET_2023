@@ -251,6 +251,8 @@ catch (InvalidPatientDataException e)
 }
 */
 
+/*
+
 Console.WriteLine("Choose");
 Console.WriteLine("1->Add Patient\n2->View Patient\n 3-> exit");
 int ch = Convert.ToInt32(Console.ReadLine());
@@ -271,6 +273,8 @@ switch (ch)
         Console.WriteLine("Please check the number");
         break;
 }
+
+*/
 /*
 MedicalHistory medicalHistory = new MedicalHistory();
 medicalHistory.RecordId = 11;
@@ -302,3 +306,179 @@ switch (ch)
 }
 */
 
+
+
+/*
+
+HotelRoom hotel = new HotelRoom(401, "Double", true);
+RoomReservation<HotelRoom> room = new();
+
+room.BookRoom(hotel);
+Console.WriteLine("Hotel Room booked Successfully");
+Console.WriteLine("Details are :");
+string? status;
+foreach (var item in RoomReservation<HotelRoom>.values)
+{
+    if (item.IsBooked)
+        status = "Engaged";
+    else
+        status = "Not Engaged";
+    Console.WriteLine("Room Number:{0} Room Type:{1} Status:{2} ", item.RoomNumber, item.RoomType, status);
+}
+Console.WriteLine("Enter the room number for canceling:");
+int num = Convert.ToInt32(Console.ReadLine());
+var roomNum = HotelRoom.GetRoom(num);
+if (roomNum != null)
+{
+    room.CancelRoom(roomNum);
+    Console.WriteLine("Room is canceled");
+}
+else
+{
+    Console.WriteLine("Room doesn't exist");
+}
+*/
+
+
+
+/*
+    Inventory<string> inventory = new Inventory<string>();
+int choice, option;
+do
+{
+    Console.WriteLine("Choose The Menu");
+    Console.WriteLine("1.Add Product\n2.Update Product\n3.RemoveProduct\n4.Search ProductById\n5.Search Product By Name");
+    choice = Convert.ToInt32(Console.ReadLine());
+    switch (choice)
+    {
+        case 1:
+            Console.WriteLine("Enter The Product Id");
+            int id = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter The ProductName");
+            string? productname = Console.ReadLine();
+            Console.WriteLine("Enter The Price");
+            double price = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Enter the quantity in stock");
+            int qty = Convert.ToInt32(Console.ReadLine());
+            inventory.AddProduct(new Products<string>(id, productname, price, qty));
+            break;
+        case 2:
+            Console.WriteLine("Enter the product id Do You want update");
+            int proid = Convert.ToInt32(Console.ReadLine());
+            var prId = inventory.FindProductById(proid);
+            if (prId != null)
+            {
+                Console.WriteLine("Enter the Product Name");
+                string? name = Console.ReadLine();
+                Console.WriteLine("Enter the price");
+                double pric = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Enter the qty");
+                int qt = Convert.ToInt32(Console.ReadLine());
+                inventory.UpdateProduct(proid, name, pric, qt);
+                Console.WriteLine("Successfully Updated");
+
+            }
+            else
+            {
+                Console.WriteLine("No Product Found!!!");
+            }
+
+            break;
+        case 3:
+            Console.WriteLine("Enter the product Id Do You Want Delete");
+            int ids = Convert.ToInt32(Console.ReadLine());
+            var data = inventory.FindProductById(ids);
+            if (data != null)
+            {
+                inventory.DeleteProduct(ids);
+                Console.WriteLine("Product Deleted Success!!!!");
+            }
+            else
+            {
+                Console.WriteLine("No Product available!!!");
+            }
+            break;
+        case 4:
+            Console.WriteLine("View Product BY Id");
+            Console.WriteLine("Enter The Product Id");
+            int pid = Convert.ToInt32(Console.ReadLine());
+            Products<string> pro = inventory.FindProductById(pid);
+            if (pro != null)
+            {
+                Console.WriteLine($"Product Id:{pro.ProductId}\nProduct Name:{pro.ProductName}" +
+                    $"\nPrice:{pro.Price}\nQuantity:{pro.QuantityInStock}");
+            }
+            else
+            {
+                Console.WriteLine("No Product Available");
+            }
+
+
+
+            break;
+        case 5:
+            Console.WriteLine("Search Product By Name");
+            string? proname = Console.ReadLine();
+            List<Products<string>> dat = inventory.FindProductByName(proname);
+            if (dat != null)
+            {
+                foreach (Products<string> p in dat)
+                {
+                    Console.WriteLine($"Product Id:{p.ProductId}\nProduct Name:{p.ProductName}" +
+                    $"\nPrice:{p.Price}\nQuantity:{p.QuantityInStock}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("No Product Found!!!");
+            }
+            break;
+        case 6:
+            Environment.Exit(0);
+            break;
+        default:
+            Console.WriteLine("Invalid Option!!!!");
+            break;
+    }
+    Console.WriteLine("Do you want to continue \n1. Yes \n2.No");
+    option = Convert.ToInt32(Console.ReadLine());
+
+} while (option == 1);
+*/
+
+/*
+
+public delegate void EDelegate();
+public delegate void NDelegate(string name);
+class Program
+{
+
+    public static void Main(string[] args)
+    {
+        HotelEvents hotelEvents = new HotelEvents();
+        EDelegate del1 = hotelEvents.RegisterToEvent;
+        del1.Invoke();
+        NDelegate del2 = hotelEvents.EventNotification;
+        del2.Invoke("music");
+
+    }
+}
+*/
+
+
+
+
+class Program
+{
+    public delegate double Delegate1(EmployeeD employeeD);
+
+    public static void Main(string[] args)
+    {
+        EmployeeD employee = new EmployeeD(199, "jack", 4);
+        Delegate1 del = EmployeeD.BonusCalculation;
+
+        Console.WriteLine("Employee Id: " + employee.EmployeeId +
+            " Employee Name: " + employee.EmployeeName + " Performance Rating: " +
+            employee.PerformanceRating + " Bonus: " + del.Invoke(employee));
+    }
+}
