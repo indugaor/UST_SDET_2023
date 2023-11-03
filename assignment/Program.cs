@@ -1,6 +1,8 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using regular;
 using regular.UserException;
+using System.ComponentModel.Design;
+using System.Threading;
 /*
 Student obj = new Student(90,87,78);
 obj.CalculateAverage(); 
@@ -537,7 +539,7 @@ do
 */
 
 
-
+/*
 
 TouristDestination tourist = new TouristDestination();
 
@@ -557,3 +559,65 @@ tourist.PriceAscending(tours);
 Console.WriteLine("Enter the destination name");
 string? resp = Console.ReadLine();
 tourist.FilterDestination(resp, tours);
+*/
+
+
+/*
+
+Hotel hotel = new Hotel("Hotel", availableRooms: 10);
+async Task HotelBookingRequestAsync(string user,int numRoomsRequest)
+{
+    bool result = await hotel.BookRoomsAsync(numRoomsRequest);
+    if (result)
+    {
+        Console.WriteLine($"{user} booked {numRoomsRequest} room(s).");
+        
+
+        
+    }
+    else
+    {
+        Console.WriteLine($"{user} couldn't book {numRoomsRequest} room(s) to insufficient availablity.");
+
+    }
+    Console.WriteLine($"Current room availability:{hotel.AvailableRooms}:{hotel.AvailableRooms}:{numRoomsRequest}");    
+}
+Task[] bookingTasks = new Task[]
+{
+HotelBookingRequestAsync("user1",3),
+HotelBookingRequestAsync("user2",2),
+HotelBookingRequestAsync("user3",5),
+HotelBookingRequestAsync("user4",1),
+};
+await Task.WhenAll(bookingTasks);
+
+*/
+
+TourPackage tourPackage = new TourPackage();
+List<TourPackage> packages = new List<TourPackage>()
+{
+    new(11,"Tirupati",new(2023,12,12),4500),
+    new(22,"Mantralaya",new(2023,11,16),5500),
+    new(18,"Shiradi",new(2024,1,12),7500),
+};
+
+Console.WriteLine("Enter the package id");
+int p = Convert.ToInt32(Console.ReadLine());
+bool IsBooked = false;
+foreach (TourPackage package in packages)
+{
+    if (p == package.PackageId)
+    {
+        Thread thread = new Thread(() => package.TourBooking(package));
+        thread.Start();
+        thread.Join();
+        IsBooked = true;
+
+    }
+}
+if (!IsBooked)
+{
+    Console.WriteLine("Packed ID " + p + " doesn't exist");
+}
+
+

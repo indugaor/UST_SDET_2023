@@ -8,6 +8,12 @@ namespace regular
 {
     internal class TourismDestination
     {
+        public TourismDestination(string? name, int availableRooms)
+        {
+            Name = name;
+            AvailableRooms = availableRooms;
+        }
+
         public TourismDestination(string? name,
            string? country, int rating)
         {
@@ -19,8 +25,7 @@ namespace regular
         public string? Name { get; set; }
         public string? Country { get; set; }
         public int Rating { get; set; }
-        
-
+        public int AvailableRooms { get; }
 
         public static void SortOnRating(List<TourismDestination> list)
         {
