@@ -592,7 +592,7 @@ HotelBookingRequestAsync("user4",1),
 await Task.WhenAll(bookingTasks);
 
 */
-
+/*
 TourPackage tourPackage = new TourPackage();
 List<TourPackage> packages = new List<TourPackage>()
 {
@@ -619,5 +619,62 @@ if (!IsBooked)
 {
     Console.WriteLine("Packed ID " + p + " doesn't exist");
 }
+*/
+/*
+ToDoList toDoList = new ToDoList();
+while (true)
+{
+    Console.WriteLine("\n Options:");
+    Console.WriteLine("1. Add Task");
+    Console.WriteLine("2. Remove Task");
+    Console.WriteLine("3. Mark Task as Completed");
+    Console.WriteLine("4. Display All Tasks");
+    Console.WriteLine("5. Display Pending Tasks");
+    Console.WriteLine("6. Display Completed Tasks");
+    Console.WriteLine("0. Exit");
+    Console.WriteLine("Enter options:");
+    int choice=int.Parse(Console.ReadLine());
+    switch(choice)
+    {
+        case 1:
+            Console.WriteLine("Enter task description:");
+            string taskdescription= Console.ReadLine();
+            toDoList.AddTask(taskdescription);
+            break;
+            case 2:
+            Console.WriteLine("Enter task Id to remove:");
+            int taskIdToRemove= int.Parse(Console.ReadLine());
+            toDoList.RemoveTask(taskIdToRemove);
+            break;
+            case 3:
+            Console.WriteLine("Enter task Id to remove:");
+            int taskIdToComplete = int.Parse(Console.ReadLine());
+            toDoList.MarkTaskAsCompleted(taskIdToComplete);
+            break;
+            case 4:
+            toDoList.DisplayTasks();
+            break;
+            case 5:
+            toDoList.DisplayPendingTasks();
+            break;
+            case 6:
+            toDoList.DisplayCompletedTasks();
+            break;
+        case 0:
+            Environment.Exit(0);
+            break;
+        default:
+            Console.WriteLine("Invalid choice. Please enter a valid option.");
+            break;
 
 
+    }
+}
+
+
+*/
+FamilyTree familyTree = new FamilyTree("Shiva" ,55);
+familyTree.AddChild("Shiva","Raju", 30);
+familyTree.AddChild("Shiva", "Keerthi", 29);
+familyTree.AddChild("Shiva", "KeerthiRaju", 23);
+familyTree.DisplayFamilyTree();
